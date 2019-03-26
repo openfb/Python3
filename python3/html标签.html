@@ -1,0 +1,280 @@
+HTML标签 
+
+类型：
+	闭合
+		<a>....</a>
+		<div>....</div>
+		
+	非闭合 
+		<input ...... />
+		<input ...... >
+
+
+<html>
+	<head>
+		....
+		....
+	</head>
+	
+	<body>
+		....
+		....
+	</body>
+</html>
+
+
+
+1、head标签 
+
+	1) 设置字符集
+		<meta charset="UTF-8">	字符集
+		
+	2) 设置网页标题	
+		<title>网页标题</title>
+	
+	3) 跳转
+		<meta http-equiv="Refresh", content="3; url=http://www.jd.com"/>
+
+
+
+2、body标签
+
+1) 显示特殊符号
+	&nbsp; 
+	&quot;
+	&lt; 
+	
+2) 显示文字 
+
+	<p>段落</p>	
+	
+	<span>用户名格式</span>
+    <span>密码错误</span>
+	
+	<i>用户名格式</i>
+    <i>密码错误</i>
+	
+	<h1>曲项向天歌</h1>
+    <h2>曲项向天歌</h2>
+    <h3>曲项向天歌</h3>
+    <h4>曲项向天歌</h4>
+    <h5>曲项向天歌</h5>
+    <h6>曲项向天歌</h6>
+	
+	
+块级标签
+	有高度、有宽度
+	无论内容多少，占一整行
+	<p>
+	
+行内标签
+	<span>
+	<i>
+	默认会显示在同一行上
+	
+
+3) 列表
+
+    <ul>
+        <li>Linux</li>
+        <li>Window</li>
+        <li>MacOS</li>
+        <li>Ubuntun</li>
+    </ul>	
+	
+	<ol>
+        <li>Linux</li>
+        <li>Window</li>
+        <li>MacOS</li>
+        <li>Ubuntun</li>
+    </ol>
+
+	
+4) 表格
+
+
+    <table border="1px">
+        <tr>
+            <td>ID</td>
+            <td>主机IP</td>
+            <td>主机名</td>
+            <td>主机状态</td>
+        </tr>
+
+        <tr>
+            <td>1</td>
+            <td>1.1.1.1</td>
+            <td>node01</td>
+            <td>ok</td>
+        </tr>
+
+        <tr>
+            <td>2</td>
+            <td>1.1.1.2</td>
+            <td>node03</td>
+            <td>warn</td>
+        </tr>
+    </table>
+
+
+5) 超链接 
+
+	a. 跳转到其他的url地址 
+		<a href="http://www.baidu.com" target="_blank">百度</a>
+		
+	b. 本页跳转(锚点链接)
+		
+		    <a href="#">朱元璋</a>
+			<a href="#zhudi">朱棣</a>
+
+			<div style="height: 500px">
+				朱元璋详细内容
+			</div>
+
+			<div id="zhudi" style="height: 500px">
+				朱棣详细内容
+			</div>
+			
+		
+6) 图片
+
+	<img src="a.jpg" width="100px" height="100px"/>
+
+
+7) div标签 
+
+	块级标签 
+	
+	<div></div>
+
+	
+8) 表单 
+
+	让用户填写数据，通过GET/POST方法提交给后台
+
+	a. 文本框 
+		
+		<input type="text" name="username" placeholder="请输入用户名"/>
+		
+			type="text”	文本框 
+			name="username"	用于让后台接收数据 
+			placeholder="请输入用户名"	
+			
+	b. 密码框 
+	
+		<input type="password" name="pwd" />
+		
+			type="password"   密码框  
+			name="pwd"	用于让后台接收数据 
+		
+	c. 提交按钮 
+	
+		作用：向后台程序提交数据 
+		
+		<input type="submit" value="提交数据" />
+		
+	d. 普通按钮 
+	
+		<input type="button" value="注册"/>
+		
+	e、重置按钮
+	
+        <input type="reset" />
+
+		清空表单内所有数据，需要使用<form></form>把所有文本框括起来
+
+		
+	f. 单选框  
+	
+		<div>
+			男：<input type="radio" name="gender" value="1"/>   
+			女：<input type="radio" name="gender" value="2"/>
+		</div>
+		
+			type="radio" 单选框 
+			name="gender"  名字相同，表示选择互斥；
+			value="1"     表示后台根据name获取到的数据
+
+			
+	g、复选框 
+			
+		<div>
+			<p>爱好：</p>
+			足球：<input type="checkbox" name="habbit" value="1"/>
+			极品飞车：<input type="checkbox" name="habbit" value="2"/>
+			战地：<input type="checkbox" name="habbit" value="3"/>
+			使命召唤：<input type="checkbox" name="habbit" value="4"/>
+		</div>
+
+
+	h. 文件
+	
+		<div>
+			上传照片：<input type="file" name="picture"/>
+		</div>
+
+
+	i. 下拉框
+	
+	    <div>
+			地址：
+			<select name="address" multiple="multiple">
+				<option value="1">北京</option>
+				<option value="2">上海</option>
+				<option value="3">武汉</option>
+				<option value="4">天津</option>
+			</select>
+		</div>
+
+
+	j. 多行文本框 
+	
+
+		<div>
+			个人描述：
+			<textarea name="comment">
+				描述信息
+			</textarea>
+		</div>
+
+
+
+
+表单使用：
+
+	1、必须存在一个类型为submit的按钮
+	2、指定提交地址、提交方法
+	
+		<form action="url地址" method="GET/POST">
+			<input type="text" name="username" />
+			<input type="password" name="password" />
+			<input type="submit" value="提交" />
+		</form>
+
+	3、提交方法
+	
+		GET 
+			
+			会把表单中的数据拼接到url地址后提交过去
+			
+			https://www.baidu.com/?username=martin&password=redhat
+			
+				url地址/?name=值
+				
+				url地址/?name=值&name=值 
+				
+			
+			
+		POST 
+		
+			把数据封装到HTTP请求报文中提交 
+
+
+	4、文件上传时，<form>需要添加enctype参数
+	
+	    <form action="http://www.jd.com" method="GET" enctype="multipart/form-data">
+
+
+
+		
+	
